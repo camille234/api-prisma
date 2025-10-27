@@ -1,10 +1,13 @@
 import express from 'express'
+import cors from 'cors'
 import { PrismaClient } from './generated/prisma/index.js'
+
 
 const prisma = new PrismaClient()
 
 const app = express()
 app.use(express.json())
+app.use(cors())
 
 
 app.post('/usuarios', async (req, res) => {
@@ -68,8 +71,3 @@ app.delete('/usuarios/:id', async (req, res) => {
 
 app.listen(3000)
 
-/*
-aaaaa
-    vampi
-    BEaGvnkGeRt4cDOL
-*/
